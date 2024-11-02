@@ -1,0 +1,80 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+### 1_IMPORT_BASH_ALIASES
+
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+### 2_IMPORT_BASH_ENV_VARS
+
+if [ -f ~/.bash_env_vars ]; then
+    source ~/.bash_env_vars
+fi
+
+
+# load last saved hip file
+function hl(){
+  # Change directory to $HFS and source houdini_setup_bash
+  if [ -d "$HFS" ]; then
+      cd "$HFS"
+      echo "Changed directory to $HFS"
+      
+      # Source the houdini_setup_bash file
+      if [ -f "$HFS/houdini_setup_bash" ]; then
+          echo "Sourcing houdini_setup_bash"
+          source "$HFS/houdini_setup_bash"
+      else
+          echo "houdini_setup_bash not found, skipping sourcing"
+      fi
+  else
+      echo "HFS directory not found"
+  fi
+
+  # Now execute the hl function to load the last saved .hip file
+  if [ -d "$HIP" ]; then
+      cd "$HIP"
+      echo "Changed directory to $HIP"
+      
+      for curr in `ls -tr1 "$HIP"` ; do
+          if [ -f "$curr" ]; then
+              fin="$curr"
+          fi
+      done
+      
+      if [ -e "$fin" ]; then
+          echo "Starting last saved file $fin"
+          houdinifx -n "$fin"
+      else
+          echo "No files here, starting blank houdini"
+          houdinifx
+      fi
+  else
+      echo "HIP directory not found"
+  fi
+}
+
