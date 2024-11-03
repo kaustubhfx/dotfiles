@@ -1,5 +1,5 @@
 # .bashrc
-
+# git_v001
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
