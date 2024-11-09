@@ -1,0 +1,1000 @@
+sudo rpm -i teamviewer-host_15.58.4.x86_64.rpm 
+locate libminizip.so.1
+wget https://rpmfind.net/linux/rpm2html/search.php?query=libminizip.so.1
+sudo find /usr/ -name "libminizip.so.1"
+sudo dnf check teamviewer
+reboot
+efibootmgr
+efibootmgr -bootnext 0000
+# efibootmgr --bootnext 0000
+efibootmgr --bootnext 0000
+sudo efibootmgr --bootnext 0000
+reboot
+cd /Onet/
+ls -lha
+sudo chown kaustubh:kaustubh *
+ls -lha
+sudo fsck -Af -M
+dmesg
+dmesg -M
+sudo fsck -Af -M
+lsblk -f
+reboot
+win
+reboot
+./bash_aliases
+n .bash_aliases
+bash
+ps aux | grep keepass
+cd .mozilla/native-messaging-hosts/
+ls
+bash
+fx
+win
+reboot
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 47239 -- /Onet/Github_Files/lbenv_lb.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44117 -- /Onet/Github_Files/lbenv_lb.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57411 -- /Onet/Github_Files/lbenv_lb.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 55091 -- /Onet/Github_Files/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 56123 -- /Onet/Github_Files/fx_env_kaustubh.py 
+export LB_ROOT='LOSTBOYS'
+export LB_TEMP='FX-TEMP'
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48415 -- /Onet/Github_Files/lbenv_lb.py 
+export LB_ROOT='LOSTBOYS'
+export LB_TEMP='FX-TEMP'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias c='clear'
+alias h='history'
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+# If not running interactively, don't do anything
+case $- in     *i*) ;;       *) return;; esac
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+# append to the history file, don't overwrite it
+shopt -s histappend
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then     debian_chroot=$(cat /etc/debian_chroot); fi
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in     xterm-color) color_prompt=yes;; esac
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+if [ -n "$force_color_prompt" ]; then     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	color_prompt=yes;     else 	color_prompt=;     fi; fi
+if [ "$color_prompt" = yes ]; then     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '; else     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '; fi
+unset color_prompt force_color_prompt
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)";     alias ls='ls --color=auto'     alias grep='grep --color=auto';     alias fgrep='fgrep --color=auto';     alias egrep='egrep --color=auto'; fi
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then     . ~/.bash_aliases; fi
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then   if [ -f /usr/share/bash-completion/bash_completion ]; then     . /usr/share/bash-completion/bash_completion;   elif [ -f /etc/bash_completion ]; then     . /etc/bash_completion;   fi; fi
+#export EDITOR="gedit"
+export EDITOR="flatpak run org.gnome.TextEditor"
+# kdenlive
+alias   kd="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/kdenlive/kdenlive-20.08.3b-x86_64.appimage"
+alias kd18="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/kdenlive/kdenlive-18.04.1-x86_64.AppImage"
+alias kd19="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/kdenlive/kdenlive-19.12.3-x86_64.appimage"
+alias kd20="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/kdenlive/kdenlive-20.08.1-x86_64.appimage"
+# ClipGrab
+alias clipgrab="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/clipgrab/ClipGrab-3.9.7-x86_64.AppImage"
+# --------------------------------------- Lost Boys MTL ----------------------------
+# source user's bash settings
+if [ -e "$HOME/.mybashrc" ]; then   echo "-- Sourcing user’s prefs:  $HOME/.mybashrc";   source $HOME/.mybashrc; fi
+# add lb auto-generated aliases
+if [ -f /tmp/lbenv2.env ]; then     . /tmp/lbenv2.env;     rm -f /tmp/lbenv2.env; fi
+echo "-- Sourcing LB Aliases"
+# student's machines
+# use "ip addr show" to find ip address for a machine
+i="1"
+while [ $i -lt 20 ]; do  pad=$(printf "%03d" $i);    alias cm$i="ssh -l ${USERNAME} comp-mtl-$pad.local";  alias fx$i="ssh -l ${USERNAME} fx-$pad.local";  i=$[$i+1]; done
+# lounge
+alias fxl="ssh -l ${USERNAME} lounge.local"
+# instructor's machine
+alias fxm="ssh -l ${USERNAME} fx-mentor.local"
+# assistant instructor
+alias fxs="ssh -l ${USERNAME} fx-ai.local"
+# fx-beast
+alias fxb="ssh -l ${USERNAME} fx-beast.local"
+# license server
+alias rhs='sudo ssh lbsstaff@192.168.1.10'
+#alias rhsr='sudo /opt/hqueue/scripts/hqserverd restart'
+alias rhsr='sudo systemctl restart hqueue'
+#alias restarthq='sudo ssh -t hquser@192.168.1.10 "/opt/hqueue/scripts/hqserverd restart"'
+alias restarthq='sudo ssh -t hquser@192.168.1.10 "sudo systemctl restart hqueue"'
+# expand PATH to include /${LB_ROOT}/LIBRARY/TECH_CONFIG/bin
+PATH=${PATH}:/${LB_ROOT}/LIBRARY/TECH_CONFIG/bin
+# google chrome alias
+alias chrome="/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/chrome/chrome --password-store=basic &"
+# deliveries alias
+alias lbdeliver="lbdailies -d delivery"
+# default HOUDINI VERSION
+export HFS_VERSION="20.5.332"
+# jump to dailies dir
+function day(){   if [ -d /${LB_ROOT}/FX/STUDENTS/$LBCLASS/DAILIES ]; then       cd  /${LB_ROOT}/FX/STUDENTS/$LBCLASS/DAILIES;       for curr in `ls -1` ; do       	fin="$curr";       done;                    if [ -d $fin ]; then       	 cd $fin;       fi;   fi; }
+# jump to delivery dir
+function del(){   if [ -d /${LB_ROOT}/FX/STUDENTS/$LBCLASS/DELIVERY ]; then       cd  /${LB_ROOT}/FX/STUDENTS/$LBCLASS/DELIVERY;   fi; }
+# load last saved hip file
+function hl(){   if [ -d $HIP ]; then       for curr in `ls -tr1 $HIP/*hip*` ; do       	if [ -f $curr ]; then       	    fin="$curr";       	fi;       done;              cd $HIP;       if [ -e $fin ]; then       	echo "Starting last saved file $fin";       	houdini -n $fin;       else       	echo "No files here, starting blank houdini";       	houdini;       fi;   fi; }
+# load last saved nuke file
+function nl(){   finalfile="";   if [ -d $NUKE ]; then       for curr in `ls -tr1 $NUKE/*nk*` ; do       	if [ -f $curr ]; then       	    finalfile="$curr";       	fi;       done;              cd $NUKE;              if [ "$finalfile" != "" ]; then       	echo "Starting last saved file: $finalfile";       	nk $finalfile &       else       	echo "No files here, starting blank nuke.";       	nk;       fi;   fi; }
+function rhq(){   echo "-- Preparing to restart hqclient on $1";   if [ $1 == "all" ] ; then   	sudo -u hquser /${LB_ROOT}/LIBRARY/TECH_CONFIG/PIPELINE/hqueue/hqclient_ssh_rc.sh all restart;   else   	sudo -u hquser /${LB_ROOT}/LIBRARY/TECH_CONFIG/PIPELINE/hqueue/hqclient_ssh_rc.sh $1 restart;   fi;    }
+# connect machine to epoptes
+alias ec="epoptes-client &"
+# alias katana="/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/Katana3.1v4/bin/katanaBin"
+alias katana="/${LB_ROOT}/LIBRARY/TECH_CONFIG/run_scripts/katana3.0v4_arnold.sh"
+umask 002
+# function to create frames from a movie
+function mkFrames(){ 	USAGE='ERROR:\tPlease supply:\n\t- the name of the file you would like to convert.  \n\t     EX:  "mkFrames foo.mp4"'; 	if [ -n "$1" ] ; then 		dest="`pwd`/$1_frames"; 		echo $dest; 		mkdir $dest; 		echo "Making frames from movie $1"; 		echo "Frames will be in $dest"; 		sleep 1; 		echo "Starting...."; 		sleep 1; 		cmd="ffmpeg -i $1 -r 24.0 $dest/$1.%4d.png"; 		echo $cmd; 		ffmpeg -i $1 -r 24.0 $dest/$1.%4d.png; 		 		echo ""; 		echo ""; 		echo "Made movie from $1"; 		echo "Frames are in $dest";        else 		echo -e $USAGE; 		OK=0; 	fi; }
+# function to create a movie from frames
+function mkMovie(){ 	USAGE='ERROR:\tPlease supply:\n\t- a path to the frames you would like to convert\n\t- start frame\n\n\tImages should be in format \"prefix.counter.extension\"\n\t\tEX: foo.1001.exr\n\nEX:\tAssuming your files are in directory /home/$USER/temp:\n\tmkMovie /home/$USER/temp 1001\n...or....\n\tmkMovie `pwd` 1001'; 	SF=1001; 	OK=1; 	echo ""; 	echo "============================================="; 	if [ -n "$1" ] ; then 		if [ -d $1 ]; then 			if [ -n "$2" ]; then 				if [ "$2" -eq "$2" ] 2>/dev/null; 				then 					SF="$2"; 					OK=1; 				else 					echo "ERROR:  second parameter must be an integer."; 					echo -e $USAGE; 					OK=0; 				fi; 			fi; 		else 			echo 'ERROR:  No such directory "$1"'; 			echo -e $USAGE; 			OK=0; 		fi; 	else 		echo -e $USAGE; 		OK=0; 	fi; 	if [ $OK -eq "1" ]; then 		cd $1 ; 		for x in `ls -1` ; do 			FFN=$(basename -- "$x"); 			SSUFFIX="${FFN##*.}"; 			if [ $SSUFFIX == "mp4" ]; then 				echo "NOTE:  skipping existing mp4 file: $x"; 			else 				lastfile="$x"; 			fi; 		done; 		FN=$(basename -- "$lastfile"); 		SUFFIX="${FN##*.}"; 		PREFIX="${FN%%.*}"; 		 		extra=""; 		if [ $SUFFIX == "exr" ]; then 			echo "NOTE:  EXR files detected, assuming linear, adding \"-gamma 2.2\""; 			extra="-gamma 2.2"; 		fi; 		 		CMD="ffmpeg -start_number $SF $extra -i $1/$PREFIX.%04d.$SUFFIX -vcodec png $PREFIX.mp4"; 		 		echo $CMD; 		echo "============================================="; 		echo ""; 		$CMD; 	fi; }
+alias mydailies='day ; cd .. ; find * -name *$USER* -exec cp -rv {} $HOME/mydailies \;'
+# alias unreal='echo   "Starting Unreal Engine 5.4.3, stand-by..." ; /${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/UnrealEngine/Engine/Binaries/Linux/UnrealEditor'
+alias modlib='/${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/realvnc/VNC-Viewer-6.20.113-Linux-x64 &'
+# function to create archive of a folder
+function packit(){ 	f="/tmp/$USER.`date +\%Y-\%m-\%d-\%T`.tar.gz"; 	src="/${LB_ROOT}/FX/STUDENTS/.$LBCLASS/$USER"; 	if [ -n "$1" ] ; then 		src="$1"; 	fi; 	 	if [ ! -d $src  ]; then 		echo "ERROR:  No such directory $1"; 		return 1; 	fi; 	 	echo ""; 	echo "INFO:        Preparing to save archive."; 	echo "Source:      $src"; 	echo "Destination: $f"; 	echo ""; 	sleep 1; 	read -p "OKAY to continue?  Press ENTER to continue, any other key to exit." ok; 	 	if [ ! -n "$ok" ]; then 			if [ -d $src  ]; then 				echo ""; 				tar -zcvf $f $src; 				echo ""; 				echo "Archive saved out to:  $f"; 			else 			  	echo "ERROR:  No such directory $1"; 			fi; 	fi; 	 }
+function discusage(){
+        export LB_LOSTBOYS_USAGE=`df 2> >(grep -v 'Permission denied')| grep $2 | tr -s ' ' | cut -d ' ' -f 5 | cut -d '%' -f 1 2>/dev/null`;  	OK=1
+	[ -n "$LB_LOSTBOYS_USAGE" ] && [ "$LB_LOSTBOYS_USAGE" -eq "$LB_LOSTBOYS_USAGE" ] 2>/dev/null; 	if [ $? -ne 0 ]; then
+	   OK=0; 	fi;  	if [ $OK -eq 1 ]; then 		if [ "$LB_LOSTBOYS_USAGE" -gt "$1" ]; then 			echo -e "--> \e[41;5m$2 : ${LB_LOSTBOYS_USAGE}%\e[0m"; 		else 			echo "--> $2 : ${LB_LOSTBOYS_USAGE}%"; 		fi;         fi; }
+echo ""
+discusage 80 "/LOSTBOYS"
+discusage 80 "/FX-TEMP "
+discusage 80 "/COMP-MTL"
+discusage 80 "sda1     "
+discusage 80 "sda2     "
+discusage 80 "nvme0n1p1"
+discusage 80 "nvme0n1p2"
+echo ""
+alias quixel='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/Quixel/Bridge.AppImage --no-sandbox'
+alias rv='echo https://lostboys.shotgunstudio.com; echo "" ; /${LB_ROOT}/LIBRARY/TECH_CONFIG/SOFTWARE/rv/bin/rv'
+# dailies
+export LB_DAILIES='/${LB_ROOT}/FX/STUDENTS/${LBCLASS}/DAILIES'
+# default nuke
+export LBNUKE_VERSION="15.0v4"
+# must be one of "--nukex" or "--nc"
+export LBNUKE_TYPE="--nukex"
+alias unswap='sudo swapoff -a ; sudo swapon -a'
+# ----------- HOUDINI -------------------
+export MPLAY_BATCH_FLIPBOOK_DIR='$JOBDIR/FLIP'
+export MPLAY_BATCH_EXTENSION='jpg'    
+export MPLAY_BATCH_PAD_SUB_VERSION='4'       
+export MPLAY_BATCH_PAD_SEQ_INDEX='4'  
+export HOUDINI_SCRIPT_LICENSE="hbatch -R"
+export HOUDINI_NO_START_PAGE_SPLASH=1
+export HOUDINI_SPLASH_MESSAGE="Welcome to Campus VFX!"
+#export HOUDINI_SPLASH_FILE="/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE_SPECIFIC/houdini18.5/pic/CampusVFX.png"
+alias flu='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/foundry-licensing-tools/FoundryLicensingUtility_8.1.6.AppImage'
+# aliases to various class lbenv
+alias lbenv6='lbenv -c CLASS-006'
+alias lbenv7='lbenv -c CLASS-007'
+alias lbenv8='lbenv -c CLASS-008'
+alias lbenv9='lbenv -c CLASS-009'
+alias lbenv10='lbenv -c CLASS-010'
+alias lbenv11='lbenv -c CLASS-011'
+alias lbenv12='lbenv -c CLASS-012'
+#echo ""
+#echo "NUKE License:"
+#echo "4101@192.168.1.10"
+alias installgimp='flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref'
+# set shell to /bin/bash
+export SHELL='/bin/bash'
+# this is the default opencl device for houdini
+# fixes opencl errors on new machines
+#export HOUDINI_OCL_DEVICETYPE="CPU"
+alias djv='/LOSTBOYS/LIBRARY/TECH_CONFIG/bin/djv'
+alias play='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/cineSyncPlay/cineSyncPlay.sh'
+alias playall='play -f .'
+alias resolve='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/resolve/bin/resolve'
+alias mocha='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/mochaproV5/bin/mochapro'
+alias blender4='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/blenderv402/blender'
+alias pureref='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/pureref/pureref.Appimage'
+alias xstudio='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/xStudio/xstudio/build/bin/xstudio.bin'
+alias monitor='/LOSTBOYS/LIBRARY/TECH_CONFIG/run_scripts/deadline_monitor.sh'
+alias shotgrid='/LOSTBOYS/LIBRARY/TECH_CONFIG/run_scripts/shotgun_launch.sh'
+# Adding xStudio modules to Python PATH
+export PYTHONPATH='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/xStudio/xstudio/build/bin/python/lib/python3.10/site-packages'
+#export OCIO='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/opencolorio/aces_1.2/config.ocio'
+export OCIO='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/opencolorio/cg-config-v2.0.0_aces-v1.3_ocio-v2.1.ocio'
+export VRAY_AUTH_CLIENT_FILE_PATH='/LOSTBOYS/LIBRARY/TECH_CONFIG/SOFTWARE/vray'
+env
+export LBCLASS="CLASS-009"
+cd /Hackus/Houdini_Projects/
+cd test6/
+ls -lha
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33093 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53769 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45671 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52169 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57655 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51657 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 56225 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 55263 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 46193 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 49295 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38313 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37753 -- /home/kaustubh/fx_env_kaustubh.py 
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53215 -- /home/kaustubh/fx_env_kaustubh.py 
+cd ~
+ls
+cd .bash_env_vars 
+bash
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48123 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59775 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38243 -- /home/kaustubh/fx_env_kaustubh.py 
+bash
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33653 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 55191 -- /home/kaustubh/fx_env_kaustubh.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59229 -- /home/kaustubh/fx_env_kaustubh.py 
+bash
+clear
+bash
+clear
+env
+cd /Onet/Houdini_Projects/
+ls -lha
+win
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 49365 -- /home/kaustubh/fx_env_kaustubh.py 
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57097 -- /home/kaustubh/fx_env_kaustubh\(1\).py 
+bash
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 50905 -- /home/kaustubh/Downloads/fx_env_kaustubh\(3\).py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52313 -- /home/kaustubh/Downloads/fx_env_kaustubh\(3\).py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 46759 -- /home/kaustubh/Downloads/fx_env_kaustubh_fixed_project_selection.py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53465 -- /home/kaustubh/Downloads/fx_env_kaustubh_fixed_project_selection.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52785 -- /home/kaustubh/fx_env_kaustubh\(1\).py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39257 -- /home/kaustubh/Downloads/fx_env_kaustubh\(2\).py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 47265 -- /home/kaustubh/Downloads/houdini_project_manager.py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39833 -- /home/kaustubh/Downloads/fx_env_kaustubh\(3\).py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54007 -- /home/kaustubh/fx_env_kaustubh.py 
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41057 -- /home/kaustubh/fx_env_kaustubh.py 
+bash
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57885 -- /home/kaustubh/Downloads/fx_env_kaustubh_fixed_final.py 
+bash
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48207 -- /home/kaustubh/Downloads/fx_env_kaustubh_fixed_final.py 
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 43375 -- /home/kaustubh/Downloads/fx_env_kaustubh_with_enhanced_project_selection.py 
+bash
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53331 -- /home/kaustubh/Downloads/fx_env_kaustubh_with_enhanced_project_selection.py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41249 -- /home/kaustubh/Downloads/fx_env_kaustubh_with_enhanced_project_selection.py 
+ cd /home/kaustubh/Downloads ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48647 -- /home/kaustubh/Downloads/fx_env_kaustubh_with_enhanced_project_selection.py 
+fxx
+bash
+fxx
+fxx
+fxx xterm
+fxx --xterm
+fxx -hv
+bash
+fxx
+bash
+fxx
+bash
+fxx
+export HFS='20.5.370'
+fxx
+bash
+fxx
+bash
+fxx
+bash
+fxx
+bash
+fxx --backup
+fxx
+fxx --help
+fxx -interactive
+fxx --interactive
+fxx --help
+fxx
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37511 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39019 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+hl
+echo HIP
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39291 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+hl
+echo HIP
+echo $HIP
+echo $GEO
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 36453 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+hl
+echo $HIP
+echo $REF
+echo $GEO
+echo $PROJECT_NAME
+echo $PROJECT_PATH
+# Create a new project
+project_name = "MyProject"
+ensure_directories_and_symlinks(project_name)
+# Then check if the environment variables were set
+print("Environment Variables:")
+print(f"HIP: {os.environ.get('HIP')}")
+print(f"GEO: {os.environ.get('GEO')}")
+print(f"PROJECT_NAME: {os.environ.get('PROJECT_NAME')}")
+print(f"PROJECT_PATH: {os.environ.get('PROJECT_PATH')}")
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 50583 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 43137 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 47923 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 34769 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41383 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38997 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58865 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53499 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57931 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44165 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41257 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33607 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 42653 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 35167 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58745 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38757 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 40187 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 34341 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45485 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41297 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38383 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 42907 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53381 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 56381 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52185 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 55567 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44535 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54373 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57239 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60521 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37873 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52695 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45825 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52677 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41195 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 50965 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 50921 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 46191 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52683 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54045 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60417 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59705 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+env
+env | grp houdini
+env houdini
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54863 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53475 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 36515 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37907 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48287 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33139 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 32807 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37959 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 49417 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 35425 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58943 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39961 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45599 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60117 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 43545 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+hl
+bash
+hl
+fxx
+hl
+env
+hl
+bash
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 43823 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 36663 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 43877 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54753 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-l
+hl
+
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53113 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53647 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+echo $HIP
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 56319 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48433 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41859 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 48785 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44751 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58255 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 36979 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59995 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 40353 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52931 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53111 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44093 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45635 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41517 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 34663 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57909 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 38683 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 50047 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39747 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51775 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 47111 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 46709 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59195 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 56837 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58847 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60731 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58219 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41837 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 40179 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+bash
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 57655 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 58267 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51641 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51643 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+bash
+ffxx
+sudo dnf update
+env
+hl
+fx
+which xterm
+xterm
+bash
+fxx
+clear
+bash
+fxx
+bash
+fxx
+bash
+fxx
+bash
+fx
+fxx
+bash
+ffxx
+bash
+imp
+bash
+cd /Hackus/Houdini_Projects/test76/
+ls -lha
+bash
+fx
+ffxx
+bash
+fx
+ffxx
+bash
+ffxx
+ffxx --help
+ffxx
+ffxx
+fx
+ffxx
+clear
+bash
+nano ~/.Xresources
+xrdb -merge ~/.Xresources
+nano ~/.Xresources
+xrdb -merge ~/.Xresources
+man xterm
+nano ~/.Xresources
+xrdb -merge ~/.Xresources
+xterm
+nano ~/.Xresources
+xrdb -merge ~/.Xresources
+xterm
+nano ~/.Xresources
+xterm
+xrdb -merge ~/.Xresources
+xterm
+nano ~/.Xresources
+xterm
+xrdb -merge ~/.Xresources
+xterm
+nano ~/.Xresources
+xterm
+nano ~/.Xresources
+xterm
+xrdb -merge ~/.Xresources
+xterm
+nano ~/.Xresources
+xrdb -merge ~/.Xresources
+xterm
+hl
+houdini
+hl
+houdini
+hl
+ffxx
+houdini
+# Define environment variables for Houdini
+export HFS="/opt/hfs20.5"
+export HOUDINI_PATH="$HFS/houdini;&"
+# Launch Houdini within xterm
+xterm -bg black -fg white -geometry 100x30 -title "Houdini Visualizer" -hold -e houdini &
+ffxx
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60547 -- /Onet/Github_Files/import\ subprocess.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51577 -- /home/kaustubh/fx_env_kaustubh_mod_2.py 
+ cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53419 -- /Onet/Github_Files/import\ subprocess.py 
+cd /Onet/Github_Files ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 59927 -- /Onet/Github_Files/import\ subprocess.py 
+xterm
+bash
+xterm
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 55787 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51839 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41299 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 37883 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+ cd /home/kaustubh ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54711 -- /home/kaustubh/fx_env_kaustubh_mod.py 
+bash
+houdini
+fx
+hl
+python3.11 --versiob
+hl
+which python
+hl --versiob
+xkill
+ffxx
+sudo dnf install python3.11
+ffxx
+xrdb -merge ~/.Xresources
+clear
+bash
+fx
+clear
+bash
+fx
+def registerTypes(type_registry):
+    # Check if the visualizer already exists before registering
+    if not type_registry.hasVisualizer("genericvisualizer"):
+        type_registry.registerVisualizer(GenericVisualizer)
+python def registerTypes(type_registry):
+    # Check if the visualizer already exists before registering
+    if not type_registry.hasVisualizer("genericvisualizer"):
+        type_registry.registerVisualizer(GenericVisualizer)
+python3 def registerTypes(type_registry):
+    # Check if the visualizer already exists before registering
+    if not type_registry.hasVisualizer("genericvisualizer"):
+        type_registry.registerVisualizer(GenericVisualizer)
+fx
+hl
+fx
+clear
+bash
+hl
+fx
+clear
+fx
+clear
+fx
+fx
+clear
+bash
+fx
+clear
+bash
+win
+reboot
+hl
+fx
+hl
+houdinifx
+fx
+hl
+env
+hl
+fx
+bash
+fx
+fx
+bash
+mkdir SIM
+ln -s /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM/ /Hackus/Houdini_Projects/SIM
+ln -s /Hackus/Houdini_Projects/SIM /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM/
+sudo ln -s /Hackus/Houdini_Projects/SIM /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM/
+sudo ln -s /Hackus/Houdini_Projects/SIM /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM
+ln -s /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM/ /Hackus/Houdini_Projects/SIM
+ln -s /Onet/Houdini_Projects/FLIP_Kraken_Project/SIM/ /Hackus/Houdini_Projects/FLIP_Kraken_Project/SIM
+htop
+top
+fx
+fx --help
+fx --interactive
+fx --help
+ffxx
+ffxx --interactive
+sudo dnf listnethogs
+sudo dnf list nethogs
+sudo dnf intall nethogs
+sudo dnf install nethogs
+sudo dnf install iotop
+sudo dnf install amdgpu_top
+sudo dnf install amdgpu
+sudo dnf install gpu_top
+hl
+hhl
+hl
+fx
+clear
+bash
+ffxx
+ffxx
+ffxx --interactive
+bash
+ffxx
+bash
+hl
+sudo -s
+exit
+sudo -s
+exit
+hl
+fx
+hl
+sudo -s
+fx
+cd Downloads/
+ls -lha
+cd /opt/
+ls -lha
+sudo rm -r htoa/
+sudo -s
+exit
+top
+clear
+cd Downloads/
+ls
+unzip vray_adv_62023_houdini20.5_954828e_22761_gcc11_install_linux.zip 
+ls
+sudo chmod +x vray_adv_62023_houdini20.5_954828e_22761_gcc11
+sudo ./vray_adv_62023_houdini20.5_954828e_22761_gcc11.bin 
+sudo chmod +x htoa-6.3.4.1_re0e79ae_houdini-20.5.332_gcc11.2_linux.run 
+sudo ./htoa-6.3.4.1_re0e79ae_houdini-20.5.332_gcc11.2_linux.run 
+clear
+cd
+bash
+exit
+sudo chmod -R kaustubh:kaustubh packages/
+sudo chown -R kaustubh:kaustubh packages/
+ls -lha
+exit
+hl
+fx
+sudo dnf update
+reboot
+sudo reboot
+sudo rm -r hfs20.5.370/
+sudo rm -r sublime_text/
+hl
+fx
+hl
+hl
+xkill
+sudo reboot
+hl
+fx
+sudo dnf install xkill
+xkill
+fx
+hl
+hl
+sudo hl
+sudo houdinifx
+sudo -s
+ls -lha
+cd Downloads/AdskLicensingInstaller-linux-14.4.0.11537/adsklicensinginstaller/
+sudo sh install.sh 
+hl
+./AdskLicensing
+./AdskLicensingAgent
+./AdskIdentityManager 
+sudo dnf install ligwebket2gtk*
+sudo dnf install ligwebkit*
+sudo dnf install ligwebkit
+sudo ./AdskIdentityManager 
+sudo -s
+cd /opt/htoa/htoa-6.3.4.1_re0e79ae_houdini-20.5.332_gcc11/htoa-6.3.4.1_re0e79ae_houdini-20.5.332_gcc11/scripts/bin/
+ls -lha
+./ArnoldLicenseManager 
+sudo ./ArnoldLicenseManager 
+sudo reboot
+fx
+hl
+hl
+houdinifx
+hl
+fx
+sudo dnf update
+sudo reboot
+hl
+fx
+win
+sudo reboot
+fx
+win
+sudo reboot
+hl
+fx
+hl
+ /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 44521 -- Untitled-1 
+ cd /Onet/Learning_Python ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53453 -- /Onet/Learning_Python/1_Hello_World.py 
+ cd /Onet/Learning_Python ; /usr/bin/env /bin/python /home/kaustubh/.var/app/com.visualstudio.code/data/vscode/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53183 -- /Onet/Learning_Python/1_Hello_World.py 
+fx
+sudo dnf update
+sudo reboot
+fx
+2
+hl
+sudo snap refresh
+ls -lha
+nano houdini.desktop
+gtk-update-icon-cache ~/.local/share/icons/hicolor
+sudo dnf update
+sudo reboot
+2
+hl
+fx
+nvidia-smi
+houdinifx
+./houdinifx
+sudo -s
+nan /etc/mongod.conf 
+n /etc/mongod.conf 
+sudo firewall-cmd --add-port=27017/tcp --permanent
+sudo firewall-cmd --reload
+n /etc/mongod.conf 
+sudo -s
+sudo -s
+hl
+
+sudo -s
+sudo ss -tlnp | grep 27100
+sudo -s
+ip addr
+fx
+flatpak list
+flatpak run org.blender.Blender
+ps -ef | grep blender
+killall blender
+ps -ef | grep blender
+cd .local/share/applications/
+nano houdini.desktop 
+/opt/hfs20.5/bin/houdinifx
+clear
+bash
+update-desdektop-database ~/.local/share/applications
+update-dektop-database ~/.local/share/applications
+update-desktop-database ~/.local/share/applications
+gtk-update-icon-cache -f ~/.local/share/icons/hicolor
+XDG_CURRENT_DESKTOP=GNOME houdini
+hl
+2
+hl
+fx
+git add .
+git commit -m "Initial commit"
+run git config --global kaustub611@gmail.com
+git config --global kaustub611@gmail.com
+git config --global user.email "kaustub611@gmail.com"
+git commit -m "Initial commit"
+git remote add origin git@github.com:$GITHUB_USERNAME/dotfiles.git
+git branch -M main
+git push -u origin main
+chezmoi init
+chezmoi init https://github.com/kaustubhfx/dotfiles
+chezmoi add ~/.bashrc
+chezmoi apply
+chezmoi add ~/.bashrc
+git -C ~/.local/share/chezmoi add .
+git -C ~/.local/share/chezmoi commit -m "Update dotfiles"
+git -C ~/.local/share/chezmoi push
+chezmoi init git@github.com:$GITHUB_USERNAME/dotfiles.git
+exit
+sudo dnf install chezmoi
+sh -c "$(curl -fsLS get.chezmoi.io)"
+sudo rm /usr/local/bin/chezmoi
+rm -rf ~/.local/share/chezmoi
+rm ~/.config/chezmoi/chezmoi.toml
+sh -c "$(curl -fsLS get.chezmoi.io)"
+sudo mv ./bin/chezmoi /usr/local/bin/
+chezmoi --version
+chezmoi init
+chezmoi add ~/.bashrc
+chezmoi edit ~/.bashrc
+chezmoi diff
+chezmoi -v apply
+$ chezmoi cd
+$ git add .
+$ git commit -m "Initial commit"
+chezmoi cd
+exit
+sudo dnf update
+sudo dnf deplist mongodb-org
+sudo dnf install libcrypto*
+sudo dnf install libcrypto.so.1.*
+sudo dnf install libcrypto.so.*
+sudo dnf upate --fix-broken
+sudo dnf update --fix-broken
+sudo dnf update --help
+sudo dnf module list | grep mongodb
+sudo dnf update
+sudo dnf install compat-openssl11
+sudo dnf install compat-openssl11 --skip-unavailable
+sudo dnf update --skip-unavailable
+sudo dnf install chezmoi
+clear
+bash
+exit
+hl
+cd /opt/Thinkbox/Deadline10/bin/
+./deadlinemonitor
+sudo reboot
+sudo dnf update
+sudo reboot
+git add .
+git commit -m "Initial commit"
+git remote add origin git@github.com:$GITHUB_USERNAME/dotfiles.git
+git branch -M main
+git push -u origin main
+sudo -s
+git remote add origin git@github.com:kaustubhfx/dotfiles.git
+git push -u origin main
+chezmoi --help
+git remote --help
+git remote add origin --help
+exit
+chezmoi add ~/.bashrc
+chezmoi -v apply
+chezmoi cd
+exit
+chezmoi --help
+chezmoi init
+chezmoi cd
+chezmoi init
+chezmoi add ~/.bashrc
+chezmoi edit ~/.bashrc
+chezmoi diff
+chezmoi -v apply
+chezmoi -n-v apply
+chezmoi -nv apply
+chezmoi cd
+git add .
+git commit -m "Initial commit"
+git remote add origin git@github.com:kaustubhfx/dotfiles.git
+git branch -M main
+git push -u origin main
+ls -al ~/.ssh
+ssh -vT git@github.com
+ ssh -T kaustubhfx@github.com
+git remote add https://github.com/kaustubhfx/dotfiles.git
+$ git remote add origin https://github.com/kaustubhfx/dotfiles.git
+# Set a new remote
+$ git remote -v
+# Verify new remote
+> origin  https://github.com/kaustubhfx/dotfiles.git (fetch)
+> origin  https://github.com/kaustubhfx/dotfiles.git (push)
+git remote add origin https://github.com/kaustubhfx/dotfiles.git
+git remote remove origin
+git remote add origin https://github.com/kaustubhfx/dotfiles.git
+git remote -v
+git branch -M main
+git push -u origin main
+git config --global credential.credentialStore gpg
+git push -u origin main
+killall discord
+ps aux | grep discord
+killall discord*
+killall discordapp
+fx
+hl
+cd /opt/Thinkbox/Deadline10/bin/
+./deadlinemonitor
+houdini
+fx
+hl
+/opt/Thinkbox/Deadline10/bin/deadlinemonitor
+fx
+killall -SEGV houdini-bin
+killall -SEGV houdini
+killall -SEGV houdini*
+killall
+killall -l
+killall -SEGV
+htop
+top
+killall -SEGV houdinifx-bin
+fx
+sudo dnf update
+fx
+hl
+wwin
+win
+sudo reboot
+win
+reboot
+sudo dnf update
+sudo reboot
+rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+sudo -s
+sudo dnf update
+xkill
+sudo reboot
+sudo -s
+clear
+bash
+fx
+fx
+xkill
+cd /home/kaustubh/Downloads/
+ls -lha
+cp vellum* /Hackus/Houdini_Projects/FLIP_Kraken_Project/HDA/
+clear
+bash
+houdinifx
+houdini
+hl
+hl
+hl
+mv ~/.config/gtk-3.0/bookmarks ~/.config/gtk-3.0/bookmarks.bak
+nautilus -q
+xkill
+nautilus
+sudo reboot
+nautilus
+hl
+fx
+hl
+fx
+hl
+fx
+lh
+hl
+fx
+hl
+fx
+sudo dnf update
+sudo reboot
+sudo dnf update
+sudo reboot
+xkill
+sudo rm -rf white_water_source/
+sudo rm -rf ww_foam_heavy/
+ls -lha
+hl
+fx
+xkill
+fx
+xkill
+nautilus
+hl
+fx
+hl

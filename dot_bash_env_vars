@@ -1,0 +1,10 @@
+
+### HOUDINI
+
+export HOUDINI_INSTALL_DIR="/opt/hfs20.5"
+export HOUDINI_PROJECT_DIR="/Onet/Houdini_Projects"
+export HOUDINI_FILES_DIR="/Hackus/Houdini_Projects"
+
+### OCIO_SETTING
+
+export OCIO="/Hackus/Tech_Files/OCIO_Config/cg-config-v2.1.0_aces-v1.3_ocio-v2.3.ocio"

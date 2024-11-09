@@ -1,0 +1,15 @@
+
+### HANDY_ALIASES
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias c='clear'
+alias h='history'
+alias n='nano'
+alias win='sudo efibootmgr --bootnext 0000'
+
+### HOUDINI_ALIASES
+
+alias fx='python3 /home/kaustubh/fx_env_kaustubh.py'
+alias ffxx='python3 /home/kaustubh/fx_env_kaustubh_mod.py'
